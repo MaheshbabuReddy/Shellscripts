@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: Nodejs
+spec:
+  containers:
+  - name: Nodejs
+    image: shreyakhangan/django-todo:latest
+    ports:
+    - containerPort: 8000
