@@ -1,0 +1,17 @@
+--- 
+- name: node installation
+  hosts: all 
+  become: yes
+  vars :
+    path : /usr/share/nopCommerce
+  tasks:
+    - name: Install unzip
+      ansible.builtin.apt:
+        name: unzip
+        state: present
+    - name: make  a directory in path 
+      ansible.builtin.file:
+        path : "{{ path }} "
+        state: directory
+    - name: Go to the folder and execute command
+      command: chdir= "{{ path }}"
